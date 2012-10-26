@@ -52,5 +52,9 @@ module Timetress
     def boxing_day(year)
       Date.new(year, DECEMBER, 26)
     end
+
+    def official_holidays(year)
+      raise NotImplementedError
+    end
   end
 end

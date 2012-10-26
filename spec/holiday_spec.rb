@@ -74,4 +74,10 @@ describe Timetress::Holiday do
     end
   end
 
+  describe "official holidays" do
+    it "must be implemented in subclass" do
+      ->{ Timetress.official_holidays(2012) }.should raise_error
+    end
+  end
+
 end
