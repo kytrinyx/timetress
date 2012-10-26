@@ -1,5 +1,13 @@
 require 'timetress'
 
+module Timetress
+  module Holiday
+    def pi_day(year)
+      Date.new(year, 3, 14)
+    end
+  end
+end
+
 describe Timetress::Holiday do
 
   describe "New Year's Day" do
@@ -80,4 +88,22 @@ describe Timetress::Holiday do
     end
   end
 
+  describe "next pi day" do
+    let(:last_pi_day) { Date.new(2010, 3, 14) }
+    let(:pi_day) { Date.new(2011, 3, 14) }
+    let(:next_pi_day) { Date.new(2012, 3, 14) }
+
+    it "is on March 14th" do
+      Timetress.next_pi_day(pi_day - 1).should eq(pi_day)
+    end
+
+    it "is this year if today is pi day" do
+      Timetress.next_pi_day(pi_day).should eq(pi_day)
+    end
+
+    it "is next year if it's already passed" do
+      Timetress.next_pi_day(pi_day + 1).should eq(next_pi_day)
+    end
+
+  end
 end

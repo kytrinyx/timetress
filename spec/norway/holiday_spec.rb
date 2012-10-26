@@ -65,4 +65,11 @@ describe Timetress::Norway do
     end
   end
 
+  describe "next holiday" do
+    it "works" do
+      mothersday = Date.new(2011, 2, 13)
+      Timetress::Norway.next_mothersday(mothersday - 1).should eq(mothersday)
+    end
+  end
+
 end

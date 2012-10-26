@@ -56,5 +56,27 @@ module Timetress
     def official_holidays(year)
       raise NotImplementedError
     end
+
+    private
+
+    def next_holiday(holiday, given_date)
+      the_day = self.send(holiday.to_sym, given_date.year)
+
+      if the_day < given_date
+        the_day = self.send(holiday.to_sym, given_date.year + 1)
+      end
+
+      the_day
+    end
+
+    def method_missing(method, *args, &block)
+      if method.to_s =~ /^next_(.*)$/
+        next_holiday($1, args.first)
+      elsif method.to_s =~ /(.*)_for_season/
+        holiday_for_season($1, *args)
+      else
+        super
+      end
+    end
   end
 end
