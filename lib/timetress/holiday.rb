@@ -60,6 +60,7 @@ module Timetress
     private
 
     def next_holiday(holiday, given_date)
+      given_date ||= Date.today
       the_day = self.send(holiday.to_sym, given_date.year)
 
       if the_day < given_date

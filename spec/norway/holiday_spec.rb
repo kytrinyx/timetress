@@ -70,6 +70,10 @@ describe Timetress::Norway do
       mothersday = Date.new(2011, 2, 13)
       Timetress::Norway.next_mothersday(mothersday - 1).should eq(mothersday)
     end
+
+    it "defaults to today" do
+      Timetress::Norway.next_mothersday.should eq(Timetress::Norway.next_mothersday(Date.today))
+    end
   end
 
 end
