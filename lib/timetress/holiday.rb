@@ -61,6 +61,11 @@ module Timetress
 
     def next_holiday(holiday, given_date)
       given_date ||= Date.today
+
+      unless given_date.respond_to?(:to_datetime)
+        raise ArgumentError.new("#{given_date.inspect} must be a date or time object")
+      end
+
       the_day = self.send(holiday.to_sym, given_date.year)
 
       if the_day < given_date

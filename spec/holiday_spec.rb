@@ -105,5 +105,14 @@ describe Timetress::Holiday do
       Timetress.next_pi_day(pi_day + 1).should eq(next_pi_day)
     end
 
+    it "default is relative to today" do
+      Timetress::Norway.next_pi_day.should eq(Timetress::Norway.next_pi_day(Date.today))
+    end
+
+    it "complains if given a non-date argument" do
+      ->{ Timetress::Norway.next_pi_day("a string") }.should raise_error(ArgumentError)
+      ->{ Timetress::Norway.next_pi_day(1) }.should raise_error(ArgumentError)
+    end
+
   end
 end
