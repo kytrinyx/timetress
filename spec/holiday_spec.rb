@@ -109,8 +109,11 @@ describe Timetress::Holiday do
       Timetress::Norway.next_pi_day.should eq(Timetress::Norway.next_pi_day(Date.today))
     end
 
-    it "complains if given a non-date argument" do
+    it "rejects string input" do
       ->{ Timetress::Norway.next_pi_day("a string") }.should raise_error(ArgumentError)
+    end
+
+    it "rejects integer input" do
       ->{ Timetress::Norway.next_pi_day(1) }.should raise_error(ArgumentError)
     end
 
