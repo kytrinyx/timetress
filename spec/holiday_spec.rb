@@ -88,6 +88,14 @@ describe Timetress::Holiday do
     end
   end
 
+  describe "it complains helpfully about" do
+    [:mothersday, :fathersday, :labor_day, :labour_day, :national_holiday].each do |holiday|
+      specify holiday.to_s do
+        ->{ Timetress.send(holiday, 2012) }.should raise_error /Norway/
+      end
+    end
+  end
+
   describe "next pi day" do
     let(:last_pi_day) { Date.new(2010, 3, 14) }
     let(:pi_day) { Date.new(2011, 3, 14) }

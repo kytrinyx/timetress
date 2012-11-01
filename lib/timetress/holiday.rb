@@ -54,10 +54,31 @@ module Timetress
     end
 
     def official_holidays(year)
-      raise NotImplementedError
+      raise NotImplementedError.new localization_error_message
+    end
+
+    def mothersday(year)
+      raise NotImplementedError.new localization_error_message
+    end
+
+    def fathersday(year)
+      raise NotImplementedError.new localization_error_message
+    end
+
+    def labour_day(year)
+      raise NotImplementedError.new localization_error_message
+    end
+    alias_method :labor_day, :labour_day
+
+    def national_holiday(year)
+      raise NotImplementedError.new localization_error_message
     end
 
     private
+
+    def localization_error_message
+      "Different in different countries. Try the Norway module."
+    end
 
     def next_holiday(holiday, given_date)
       given_date ||= Date.today
