@@ -22,17 +22,17 @@ Or install it yourself as:
 ### Timetress knows about holidays
 
 ```
-Timetress.mothersday 2012
-=> #<Date: 2012-02-12>
+Timetress.christmas 2012
+=> #<Date: 2012-12-25>
 ```
 
 ```
-# In October of 2011
-Timetress.next_mothersday
-=> #<Date: 2012-02-12>
+# On New Year's Eve, 2011
+Timetress.next_christmas
+=> #<Date: 2012-12-25>
 ```
 
-### Public Holidays
+### Public Holidays (Norway only)
 
 > A public holiday, national holiday or legal holiday is a holiday generally established by law and is usually a non-working day during the year.
 > - Wikipedia
@@ -64,7 +64,7 @@ Timetress::Norway.nth_workday_after 1, Date.new(2012, 10, 25)
 
 ## Implemented holidays (Norway)
 
-Public holidays are emphasized.
+Public holidays are emphasized below.
 
 * *New Year's Day*: January 1st.
 * Mothersday: Second Sunday in February.
