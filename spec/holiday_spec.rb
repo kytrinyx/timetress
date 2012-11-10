@@ -84,14 +84,14 @@ describe Timetress::Holiday do
 
   describe "official holidays" do
     it "must be implemented in subclass" do
-      ->{ Timetress.official_holidays(2012) }.should raise_error
+      lambda { Timetress.official_holidays(2012) }.should raise_error
     end
   end
 
   describe "it complains helpfully about" do
     [:mothersday, :fathersday, :labor_day, :labour_day, :national_holiday].each do |holiday|
       specify holiday.to_s do
-        ->{ Timetress.send(holiday, 2012) }.should raise_error /Norway/
+        lambda { Timetress.send(holiday, 2012) }.should raise_error /Norway/
       end
     end
   end
@@ -118,11 +118,11 @@ describe Timetress::Holiday do
     end
 
     it "rejects string input" do
-      ->{ Timetress::Norway.next_pi_day("a string") }.should raise_error(ArgumentError)
+      lambda { Timetress::Norway.next_pi_day("a string") }.should raise_error(ArgumentError)
     end
 
     it "rejects integer input" do
-      ->{ Timetress::Norway.next_pi_day(1) }.should raise_error(ArgumentError)
+      lambda { Timetress::Norway.next_pi_day(1) }.should raise_error(ArgumentError)
     end
 
   end
