@@ -3,6 +3,8 @@ module Timetress
 
     JANUARY = 1
     FEBRUARY = 2
+    MAY = 5
+    NOVEMBER = 11
     DECEMBER = 12
 
     def new_years_day(year)

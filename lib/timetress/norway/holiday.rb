@@ -3,9 +3,6 @@ module Timetress
     module Holiday
       include Timetress::Holiday
 
-      MAY = 5
-      NOVEMBER = 11
-
       def mothersday(year)
         second_sunday_in(FEBRUARY, year)
       end
