@@ -3,6 +3,8 @@
 Knows about workdays and holidays, public and otherwise.
 Answers the age-old question _When is mothersday this year?_.
 
+[![Build Status](https://secure.travis-ci.org/kytrinyx/timetress.png?branch=master)](http://travis-ci.org/kytrinyx/timetress)
+
 ## Installation
 
 Add this line to your application's Gemfile:
