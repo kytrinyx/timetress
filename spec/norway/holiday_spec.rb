@@ -72,4 +72,10 @@ describe Timetress::Norway do
     end
   end
 
+  describe "christmas" do
+    it "is ambiguous" do
+      ->{ Timetress::Norway.christmas(2012) }.should raise_error(Timetress::AmbiguousHolidayError)
+    end
+  end
+
 end
