@@ -46,6 +46,8 @@ module Timetress
         Date.new(year, DECEMBER, 25)
       end
 
+      alias_method :second_day_of_christmas, :boxing_day
+
       def christmas(year)
         raise AmbiguousHolidayError.new("Do you mean `christmas_eve` or `first_day_of_christmas`?")
       end
