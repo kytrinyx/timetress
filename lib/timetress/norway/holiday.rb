@@ -20,6 +20,16 @@ module Timetress
         Date.new(year, MAY, 17)
       end
 
+      def christmas(year)
+        raise AmbiguousHolidayError.new("Do you mean `christmas_eve` or `first_day_of_christmas`?")
+      end
+
+      def first_day_of_christmas(year)
+        Date.new(year, DECEMBER, 25)
+      end
+
+      alias_method :second_day_of_christmas, :boxing_day
+
       def official_holidays(year)
         [
           new_years_day(year),
@@ -38,16 +48,6 @@ module Timetress
       end
       alias_method :public_holidays, :official_holidays
       alias_method :legal_holidays, :official_holidays
-
-      def first_day_of_christmas(year)
-        Date.new(year, DECEMBER, 25)
-      end
-
-      alias_method :second_day_of_christmas, :boxing_day
-
-      def christmas(year)
-        raise AmbiguousHolidayError.new("Do you mean `christmas_eve` or `first_day_of_christmas`?")
-      end
 
       private
       def second_sunday_in(month, year)
