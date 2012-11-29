@@ -55,6 +55,10 @@ module Timetress
       Date.new(year, DECEMBER, 26)
     end
 
+    def new_years_eve(year)
+      Date.new(year, DECEMBER, 31)
+    end
+
     def official_holidays(year)
       raise NotImplementedError.new localization_error_message
     end

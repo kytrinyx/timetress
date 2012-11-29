@@ -82,6 +82,12 @@ describe Timetress::Holiday do
     end
   end
 
+  describe "New Year's Eve" do
+    it "is on Dec 31st" do
+      Timetress.new_years_eve(2011).should eq Date.new(2011, 12, 31)
+    end
+  end
+
   describe "official holidays" do
     it "must be implemented in subclass" do
       lambda { Timetress.official_holidays(2012) }.should raise_error
