@@ -130,6 +130,6 @@ describe Timetress::Holiday do
     it "rejects integer input" do
       lambda { Timetress::Norway.next_pi_day(1) }.should raise_error(ArgumentError)
     end
-
   end
+
 end

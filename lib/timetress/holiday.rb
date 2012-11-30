@@ -105,8 +105,6 @@ module Timetress
     def method_missing(method, *args, &block)
       if method.to_s =~ /^next_(.*)$/
         next_holiday($1, args.first)
-      elsif method.to_s =~ /(.*)_for_season/
-        holiday_for_season($1, *args)
       else
         super
       end
