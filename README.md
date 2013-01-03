@@ -34,6 +34,12 @@ Timetress.next_christmas
 => #<Date: 2012-12-25>
 ```
 
+```
+# On Christmas Day, 2012
+Timetress.previous_christmas
+=> #<Date: 2011-12-25>
+```
+
 ### Public Holidays (Norway only)
 
 > A public holiday, national holiday or legal holiday is a holiday generally established by law and is usually a non-working day during the year.

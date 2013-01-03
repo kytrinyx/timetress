@@ -132,4 +132,33 @@ describe Timetress::Holiday do
     end
   end
 
+  describe "previous pi day" do
+    let(:last_pi_day) { Date.new(2010, 3, 14) }
+    let(:pi_day) { Date.new(2011, 3, 14) }
+
+    it "is this year if it has passed" do
+      Timetress.previous_pi_day(pi_day + 1).should eq(pi_day)
+    end
+
+    it "is last year if today is pi day" do
+      Timetress.previous_pi_day(pi_day).should eq(last_pi_day)
+    end
+
+    it "is last year if it is coming up" do
+      Timetress.previous_pi_day(pi_day - 1).should eq(last_pi_day)
+    end
+
+    it "default is relative to today" do
+      Timetress::Norway.previous_pi_day.should eq(Timetress::Norway.previous_pi_day(Date.today))
+    end
+
+    it "rejects string input" do
+      lambda { Timetress::Norway.previous_pi_day("a string") }.should raise_error(ArgumentError)
+    end
+
+    it "rejects integer input" do
+      lambda { Timetress::Norway.previous_pi_day(1) }.should raise_error(ArgumentError)
+    end
+  end
+
 end
