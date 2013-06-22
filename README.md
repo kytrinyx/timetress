@@ -9,32 +9,38 @@ Answers the age-old question _When is mothersday this year?_.
 
 Add this line to your application's Gemfile:
 
-    gem 'timetress'
+```bash
+gem 'timetress'
+```
 
 And then execute:
 
-    $ bundle
+```bash
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install timetress
+```bash
+$ gem install timetress
+```
 
 ## Usage
 
 ### Timetress knows about holidays
 
-```
+```ruby
 Timetress.christmas 2012
 => #<Date: 2012-12-25>
 ```
 
-```
+```ruby
 # On New Year's Eve, 2011
 Timetress.next_christmas
 => #<Date: 2012-12-25>
 ```
 
-```
+```ruby
 # On Christmas Day, 2012
 Timetress.previous_christmas
 => #<Date: 2011-12-25>
@@ -45,8 +51,10 @@ Timetress.previous_christmas
 > A public holiday, national holiday or legal holiday is a holiday generally established by law and is usually a non-working day during the year.
 > - Wikipedia
 
+```ruby
 Timetress::Norway.public_holidays(2012)
 => [#<Date: 2012-01-01>, #<Date: 2012-04-05>,...]
+```
 
 ### Workdays
 
@@ -100,6 +108,10 @@ http://en.wikipedia.org/wiki/Computus
 The current implementation simply has a list of 200 years worth of easter.
 
 ## Contributing
+
+There are numerous holidays that did not make it onto the list in the first pass, mostly because I don't know about them. I had to look all but New Year's Eve up on Wikipedia.
+
+Please do add missing holidays, as well as modules for other countries.
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
