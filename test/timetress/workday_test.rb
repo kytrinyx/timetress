@@ -11,7 +11,7 @@ module Somewhere
   end
 end
 
-class WorkdayTest < MiniTest::Unit::TestCase
+class WorkdayTest < Minitest::Test
 
   def test_weekends_are_not_workdays
      assert !Somewhere.workday?(Date.new(2012, 9, 29))
@@ -44,7 +44,7 @@ class WorkdayTest < MiniTest::Unit::TestCase
   end
 end
 
-class NthWorkdayTest < MiniTest::Unit::TestCase
+class NthWorkdayTest < Minitest::Test
   def wednesday
     Date.new(2011, 2, 9)
   end

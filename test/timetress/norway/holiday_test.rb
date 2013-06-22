@@ -1,7 +1,7 @@
 require './test/test_helper'
 require 'timetress'
 
-class NorwegianHolidaysTest < MiniTest::Unit::TestCase
+class NorwegianHolidaysTest < Minitest::Test
 
   def test_inherits_common_holidays
     assert_equal Date.new(2011, 1, 1), Timetress::Norway.new_years_day(2011)

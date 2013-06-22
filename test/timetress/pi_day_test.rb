@@ -9,7 +9,7 @@ module Timetress
   end
 end
 
-class PiDayTest < MiniTest::Unit::TestCase
+class PiDayTest < Minitest::Test
 
   def last_pi_day
     Date.new(2010, 3, 14)
