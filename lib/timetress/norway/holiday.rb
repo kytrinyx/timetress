@@ -44,7 +44,7 @@ module Timetress
           pentecost_monday(year),
           first_day_of_christmas(year),
           boxing_day(year)
-        ]
+        ].uniq.sort
       end
       alias_method :public_holidays, :official_holidays
       alias_method :legal_holidays, :official_holidays
