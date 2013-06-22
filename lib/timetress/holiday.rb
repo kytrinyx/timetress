@@ -83,7 +83,7 @@ module Timetress
     private
 
     def localization_error_message
-      "Different in different countries. Try the Norway module."
+      "Different in different countries. Try a country-specific module."
     end
 
     def next_holiday(holiday, given_date)
