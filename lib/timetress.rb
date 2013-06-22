@@ -7,6 +7,8 @@ require "timetress/workday"
 require 'timetress/norway'
 
 module Timetress
+  class BeMoreSpecific < RuntimeError; end
+
   extend Timetress::Holiday
 
 end

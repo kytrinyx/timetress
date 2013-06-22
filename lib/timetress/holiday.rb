@@ -60,24 +60,24 @@ module Timetress
     end
 
     def official_holidays(year)
-      raise NotImplementedError.new localization_error_message
+      raise BeMoreSpecific.new localization_error_message
     end
 
     def mothersday(year)
-      raise NotImplementedError.new localization_error_message
+      raise BeMoreSpecific.new localization_error_message
     end
 
     def fathersday(year)
-      raise NotImplementedError.new localization_error_message
+      raise BeMoreSpecific.new localization_error_message
     end
 
     def labour_day(year)
-      raise NotImplementedError.new localization_error_message
+      raise BeMoreSpecific.new localization_error_message
     end
     alias_method :labor_day, :labour_day
 
     def national_holiday(year)
-      raise NotImplementedError.new localization_error_message
+      raise BeMoreSpecific.new localization_error_message
     end
 
     private
