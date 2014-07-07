@@ -56,7 +56,7 @@ module Timetress
       end
 
       def days_til_sunday(date)
-        (7 - date.wday) % 7
+        -date.wday % 7
       end
 
 
