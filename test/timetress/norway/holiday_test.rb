@@ -88,4 +88,3 @@ class NorwegianHolidaysTest < Minitest::Test
     end
   end
 end
-
