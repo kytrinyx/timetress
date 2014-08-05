@@ -8,6 +8,7 @@ require 'timetress/norway'
 
 module Timetress
   class BeMoreSpecific < RuntimeError; end
+  class AmbiguousHolidayError < StandardError; end
 
   extend Timetress::Holiday
 

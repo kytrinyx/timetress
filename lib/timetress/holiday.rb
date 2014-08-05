@@ -4,6 +4,8 @@ module Timetress
     JANUARY = 1
     FEBRUARY = 2
     MAY = 5
+    JUNE = 6
+    SEPTEMBER = 9
     NOVEMBER = 11
     DECEMBER = 12
 
@@ -125,6 +127,43 @@ module Timetress
       else
         super
       end
+    end
+
+    def second_sunday_in(month, year)
+      second_week = Date.new(year, month, 8)
+      second_week + days_til_sunday(second_week)
+    end
+
+    def third_sunday_in(month, year)
+      third_week = Date.new(year, month, 15)
+      third_week + days_til_sunday(third_week)
+    end
+
+    def first_monday_in(month, year)
+      the_first = Date.new(year, month, 1)
+      the_first + days_til_monday(the_first)
+    end
+
+    def third_monday_in(month, year)
+      third_week = Date.new(year, month, 15)
+      third_week + days_til_monday(third_week)
+    end
+
+    def last_monday_in(month, year)
+      the_last = Date.new(year, month, -1)
+      the_last - days_since_monday(the_last)
+    end
+
+    def days_since_monday(date)
+      (7 - (1 - date.wday)) % 7
+    end
+
+    def days_til_sunday(date)
+      -date.wday % 7
+    end
+
+    def days_til_monday(date)
+      (1 - date.wday) % 7
     end
   end
 end

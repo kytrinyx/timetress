@@ -49,17 +49,6 @@ module Timetress
       alias_method :public_holidays, :official_holidays
       alias_method :legal_holidays, :official_holidays
 
-      private
-      def second_sunday_in(month, year)
-        second_week = Date.new(year, month, 8)
-        second_week + days_til_sunday(second_week)
-      end
-
-      def days_til_sunday(date)
-        -date.wday % 7
-      end
-
-
     end
   end
 end
