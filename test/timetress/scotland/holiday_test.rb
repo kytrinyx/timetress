@@ -34,4 +34,12 @@ class ScottishHolidaysTest < Minitest::Test
   def test_spring_holiday
     assert_equal Date.new(2014, 5, 26), Timetress::Scotland.spring_holiday(2014)
   end
+
+  def test_summer_holiday
+    assert_equal Date.new(2014, 8, 4), Timetress::Scotland.summer_holiday(2014)
+  end
+
+  def test_st_andrews_day
+    assert_equal Date.new(2014, 11, 30), Timetress::Scotland.st_andrews_day(2014)
+  end
 end

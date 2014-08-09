@@ -15,6 +15,14 @@ module Timetress
         last_monday_in(MAY, year)
       end
 
+      def summer_holiday(year)
+        first_monday_in(AUGUST, year)
+      end
+
+      def st_andrews_day(year)
+        Date.new(year, NOVEMBER, 30)
+      end
+
       def ash_wednesday(year)
         easter_sunday(year) - 46
       end
