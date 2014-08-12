@@ -14,6 +14,7 @@ module Timetress
       def spring_holiday(year)
         last_monday_in(MAY, year)
       end
+      alias_method :spring_holiday, :victoria_day
 
       def summer_holiday(year)
         first_monday_in(AUGUST, year)
@@ -31,10 +32,24 @@ module Timetress
         # 4 days to the 1st Sunday + 3 more weeks = 25 days
         ash_wednesday(year) + 25
       end
-      alias :mothering_day :mothersday
+      alias_method :mothering_day :mothersday
 
       def fathersday(year)
         third_sunday_in(JUNE, year)
+      end
+
+      def official_holidays(year)
+        [
+          new_years_day(year),
+          new_year_holiday(year),
+          good_friday(year),
+          may_day(year),
+          spring_holiday(year),
+          summer_holiday(year),
+          st_andrews_day(year),
+          christmas(year),
+          boxing_day(year)
+        ]
       end
 
       private
