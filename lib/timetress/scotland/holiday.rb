@@ -3,6 +3,9 @@ module Timetress
     module Holiday
       include Timetress::Holiday
 
+      VALID_ORDINALS = %w[first second third forth last]
+      VALID_DAY_NAMES = %w[sunday monday tuesday wednesday thursday friday saturday]
+
       def new_year_holiday(year)
         Date.new(year, JANUARY, 2)
       end
@@ -85,7 +88,6 @@ module Timetress
           # Tuesday.
           if holiday.monday? &&
             special_2nd_day_holidays.include?(holiday)
-
             holiday + 1
           else
             holiday
@@ -95,32 +97,34 @@ module Timetress
 
       private
 
-      def first_monday_in(month, year)
-        first_week = Date.new(year, month, 1)
-        first_week + days_until_monday(first_week)
-      end
-
-      def last_monday_in(month, year)
-        last_week = Date.new(year, month, -7)
-        last_week + days_until_monday(last_week)
-      end
-
-      def days_until_monday(date)
-        days_til_mon = 0
-        while date.wday != 1 do
+      def days_until(day, date)
+        x = 0
+        # utilize the monday?, tuesday?, etc. methods on the Date object
+        while !date.send("#{day}?") do
           date += 1
-          days_til_mon += 1
+          x +=1
         end
-        days_til_mon
+        x
       end
 
-      def third_sunday_in(month, year)
-        third_week = Date.new(year, month, 15)
-        third_week + days_til_sunday(third_week)
-      end
+      # Catch methods like "first_monday_in" or "third_tuesday_in"
+      def method_missing(method_id, *args)
+        month, year = args
 
-      def days_til_sunday(date)
-        -date.wday % 7
+        valid_regex = /(#{VALID_ORDINALS.join('|')})\_(#{VALID_DAY_NAMES.join('|')})\_in/
+        valid_method = valid_regex.match method_id
+
+        if valid_method.nil?
+          super
+        else
+          week = case valid_method[1]
+            when 'first' then Date.new(year, month, 1)
+            when 'second' then Date.new(year, month, 8)
+            when 'third' then Date.new(year, month, 15)
+            when 'last' || 'fourth' then Date.new(year, month, -7)
+          end
+          week + days_until(valid_method[2], week)
+        end
       end
 
     end
