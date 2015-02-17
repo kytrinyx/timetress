@@ -46,7 +46,7 @@ Timetress.previous_christmas
 => #<Date: 2011-12-25>
 ```
 
-### Public Holidays (Norway only)
+### Public Holidays (Norway & Scotland only)
 
 > A public holiday, national holiday or legal holiday is a holiday generally established by law and is usually a non-working day during the year.
 > - Wikipedia
@@ -55,6 +55,12 @@ Timetress.previous_christmas
 Timetress::Norway.public_holidays(2012)
 => [#<Date: 2012-01-01>, #<Date: 2012-04-05>,...]
 ```
+
+```ruby
+Timetress::Scotland.public_holidays(2012)
+=> [#<Date: 2012-01-02>, #<Date: 2012-01-03>,...]
+```
+
 
 ### Workdays
 
@@ -65,6 +71,9 @@ Timetress::Norway.workday? Date.new(2012, 1, 5)
  => true
 
 Timetress::Norway.workday? Date.new(2012, 5, 17)
+ => false
+
+Timetress::Scotland.workday? Date.new(2012, 1, 2)
  => false
 ```
 
@@ -98,6 +107,42 @@ Public holidays are emphasized below.
 * Christmas Eve: December 24th.
 * *Christmas*: December 25th.
 * *Boxing Day*: December 26th.
+
+## Implemented holidays (Scotland)
+
+> **Bank holidays** are holidays when banks and many other businesses are closed for the day. **Public holidays** are holidays which have been observed through custom and practice.
+> - [Wikipedia](http://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom)
+
+### Bank holidays and royal proclamations
+
+In Scotland, bank holidays always extend the weekend. This is done via a royal proclamation.
+
+>Royal proclamation is used to move bank holidays that would otherwise fall on a weekend. In this way, public holidays are not 'lost' in years when they coincide with weekends. 
+> - [Wikipedia](http://en.wikipedia.org/wiki/Bank_holiday#Royal_proclamation)
+
+Essentially, if a holiday lands on a weekend, there is a royal proclamation "moving" the day everybody gets off work to the next weekday. I.e. if New Year's Days is on a Sunday, everybody gets Monday off.
+
+
+### Bank Holidays
+
+* **New Year's Day:** January 1st
+* **New Year's Holiday:** January 2nd
+* **Good Friday:** The Friday before Easter Sunday
+* **May Day:** First Monday in May
+* **Spring Holiday/Victoria Day:** The last Monday in May
+* **Summer Holiday:** First Monday in August
+* **St. Andrew's Day:** November 30th / royal proclamation
+* **Christmas Day:** December 25th / royal proclamation
+* **Boxing Day:** December 26th / royal proclamation
+
+### Public Holidays
+
+All of the bank holidays (without royal proclamation) plus:
+
+* **Mother's Day:** Fourth Sunday in Lent
+* **Father's Day:** Third Sunday in June
+
+
 
 ## Easter
 
