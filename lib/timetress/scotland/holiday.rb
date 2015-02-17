@@ -13,6 +13,8 @@ module Timetress
       def may_day(year)
         first_monday_in(MAY, year)
       end
+      alias_method :labour_day, :may_day
+      alias_method :early_may_bank_holiday, :may_day
 
       def spring_holiday(year)
         if year == 2012
@@ -46,12 +48,16 @@ module Timetress
         third_sunday_in(JUNE, year)
       end
 
+      # http://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom#Scotland
       def official_holidays(year)
         [
           new_years_day(year),
           new_year_holiday(year),
           good_friday(year),
+          easter_monday(year),
           may_day(year),
+          mothersday(year),
+          fathersday(year),
           spring_holiday(year),
           summer_holiday(year),
           st_andrews_day(year),
@@ -59,9 +65,21 @@ module Timetress
           boxing_day(year)
         ].uniq.sort
       end
+      alias_method :public_holidays, :official_holidays
 
+      # http://www.scotland.gov.uk/Topics/People/bank-holidays/
       def bank_holidays(year)
-        official_holidays(year).map{ |d| royal_proclamation(d) }
+        [
+          new_years_day(year),
+          new_year_holiday(year),
+          good_friday(year),
+          early_may_bank_holiday(year),
+          spring_holiday(year),
+          summer_holiday(year),
+          st_andrews_day(year),
+          christmas(year),
+          boxing_day(year)
+        ].uniq.sort.map{ |d| royal_proclamation(d) }
       end
 
       def royal_proclamation(holiday)
