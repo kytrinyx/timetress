@@ -6,6 +6,7 @@ module Timetress
     MAY = 5
     JUNE = 6
     SEPTEMBER = 9
+    AUGUST = 8
     NOVEMBER = 11
     DECEMBER = 12
 

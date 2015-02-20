@@ -6,6 +6,7 @@ require "timetress/workday"
 
 require 'timetress/norway'
 require 'timetress/usa'
+require 'timetress/scotland'
 
 module Timetress
   class BeMoreSpecific < RuntimeError; end
