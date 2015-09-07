@@ -63,8 +63,7 @@ class PiDayTest < Minitest::Test
   end
 
   def test_default_is_to_calculate_previous_holiday_relative_to_today
-    assert_equal Timetress.previous_pi_day(Date.today),
-                 Timetress.previous_pi_day
+    assert_equal Timetress.previous_pi_day(Date.today), Timetress.previous_pi_day
   end
 
   def test_previous_holiday_rejects_string_input

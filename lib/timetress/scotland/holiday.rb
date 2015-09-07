@@ -136,10 +136,10 @@ module Timetress
           super
         else
           week = case valid_method[1]
-                 when 'first' then Date.new(year, month, 1)
-                 when 'second' then Date.new(year, month, 8)
-                 when 'third' then Date.new(year, month, 15)
-                 when 'last' || 'fourth' then Date.new(year, month, -7)
+            when 'first' then Date.new(year, month, 1)
+            when 'second' then Date.new(year, month, 8)
+            when 'third' then Date.new(year, month, 15)
+            when 'last' || 'fourth' then Date.new(year, month, -7)
           end
           week + days_until(valid_method[2], week)
         end

@@ -8,8 +8,7 @@ class USHolidaysTest < Minitest::Test
   end
 
   def test_martin_luther_king_day_is_the_third_monday_of_january
-    assert_equal Date.new(2011, 1, 17),
-                 Timetress::USA.martin_luther_king_day(2011)
+    assert_equal Date.new(2011, 1, 17), Timetress::USA.martin_luther_king_day(2011)
   end
 
   def test_memorial_day_is_the_last_monday_in_may

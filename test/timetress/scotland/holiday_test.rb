@@ -7,8 +7,7 @@ class ScottishHolidaysTest < Minitest::Test
   end
 
   def test_new_year_holiday
-    assert_equal Date.new(2013, 1, 2),
-                 Timetress::Scotland.new_year_holiday(2013)
+    assert_equal Date.new(2013, 1, 2), Timetress::Scotland.new_year_holiday(2013)
   end
 
   def test_may_day
@@ -48,8 +47,7 @@ class ScottishHolidaysTest < Minitest::Test
   end
 
   def test_st_andrews_day
-    assert_equal Date.new(2014, 11, 30),
-                 Timetress::Scotland.st_andrews_day(2014)
+    assert_equal Date.new(2014, 11, 30), Timetress::Scotland.st_andrews_day(2014)
   end
 
   # def test_st_andrews_on_a_saturday
@@ -58,30 +56,24 @@ class ScottishHolidaysTest < Minitest::Test
   # end
 
   def test_royal_proclamation_for_weekday
-    assert_equal Date.new(2014, 8, 20),
-                 Timetress::Scotland.royal_proclamation(Date.new(2014, 8, 20))
+    assert_equal Date.new(2014, 8, 20), Timetress::Scotland.royal_proclamation(Date.new(2014, 8, 20))
   end
 
   def test_royal_proclamation_for_saturday_holiday
-    assert_equal Date.new(2014, 8, 25),
-                 Timetress::Scotland.royal_proclamation(Date.new(2014, 8, 23))
+    assert_equal Date.new(2014, 8, 25), Timetress::Scotland.royal_proclamation(Date.new(2014, 8, 23))
   end
 
   def test_royal_proclamation_for_sunday_holiday
-    assert_equal Date.new(2014, 8, 25),
-                 Timetress::Scotland.royal_proclamation(
+    assert_equal Date.new(2014, 8, 25), Timetress::Scotland.royal_proclamation(
                    Date.new(2014, 8, 24))
   end
 
   def test_royal_proclamation_for_boxing_day_on_sunday
-    assert_equal Date.new(2010, 12, 28),
-                 Timetress::Scotland.royal_proclamation(
-                   Date.new(2010, 12, 26))
+    assert_equal Date.new(2010, 12, 28), Timetress::Scotland.royal_proclamation(Date.new(2010, 12, 26))
   end
 
   def test_royal_proclamation_for_jan_2_on_sunday
-    assert_equal Date.new(2011, 1, 4),
-                 Timetress::Scotland.royal_proclamation(Date.new(2011, 1, 2))
+    assert_equal Date.new(2011, 1, 4), Timetress::Scotland.royal_proclamation(Date.new(2011, 1, 2))
   end
 
   # Reference: http://www.scotland.gov.uk/Topics/People/bank-holidays/banks-holidays2010
