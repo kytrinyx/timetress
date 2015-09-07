@@ -51,8 +51,7 @@ class ScottishHolidaysTest < Minitest::Test
   end
 
   # def test_st_andrews_on_a_saturday
-  #  assert_equal Date.new(2013, 12, 2),
-  #               Timetress::Scotland.st_andrews_day(2013)
+  #  assert_equal Date.new(2013, 12, 2), Timetress::Scotland.st_andrews_day(2013)
   # end
 
   def test_royal_proclamation_for_weekday
@@ -64,8 +63,7 @@ class ScottishHolidaysTest < Minitest::Test
   end
 
   def test_royal_proclamation_for_sunday_holiday
-    assert_equal Date.new(2014, 8, 25), Timetress::Scotland.royal_proclamation(
-                   Date.new(2014, 8, 24))
+    assert_equal Date.new(2014, 8, 25), Timetress::Scotland.royal_proclamation(Date.new(2014, 8, 24))
   end
 
   def test_royal_proclamation_for_boxing_day_on_sunday
