@@ -3,8 +3,9 @@ module Timetress
     module Holiday
       include Timetress::Holiday
 
-      VALID_ORDINALS = %w[first second third forth last]
-      VALID_DAY_NAMES = %w[sunday monday tuesday wednesday thursday friday saturday]
+      VALID_ORDINALS = %w(first second third forth last)
+      VALID_DAY_NAMES = %w(
+        Sunday Monday Tuesday Wednesday Thursday Friday Saturday)
 
       def new_year_holiday(year)
         Date.new(year, JANUARY, 2)
@@ -79,7 +80,7 @@ module Timetress
           st_andrews_day(year),
           christmas(year),
           boxing_day(year)
-        ].uniq.sort.map{ |d| royal_proclamation(d) }
+        ].uniq.sort.map { |d| royal_proclamation(d) }
       end
 
       def royal_proclamation(holiday)
@@ -88,7 +89,6 @@ module Timetress
           boxing_day(holiday.year),
           new_year_holiday(holiday.year)
         ]
-
 
         if holiday.sunday?
           # If the second day of a two day holiday falls on a Sunday,
@@ -105,7 +105,7 @@ module Timetress
           # then it gets the Monday and the second day gets the
           # Tuesday.
           if holiday.monday? &&
-            special_2nd_day_holidays.include?(holiday)
+             special_2nd_day_holidays.include?(holiday)
             holiday + 1
           else
             holiday
@@ -118,9 +118,9 @@ module Timetress
       def days_until(day, date)
         x = 0
         # utilize the monday?, tuesday?, etc. methods on the Date object
-        while !date.send("#{day}?") do
+        until date.send("#{day}?")
           date += 1
-          x +=1
+          x += 1
         end
         x
       end
@@ -144,7 +144,6 @@ module Timetress
           week + days_until(valid_method[2], week)
         end
       end
-
     end
   end
 end

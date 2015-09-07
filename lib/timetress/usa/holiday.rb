@@ -28,8 +28,6 @@ module Timetress
       def martin_luther_king_day(year)
         third_monday_in(JANUARY, year)
       end
-
     end
   end
 end
-

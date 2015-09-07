@@ -2,7 +2,6 @@ require './test/test_helper'
 require 'timetress'
 
 class ScottishHolidaysTest < Minitest::Test
-
   def test_inherits_common_holidays
     assert_equal Date.new(2011, 1, 1), Timetress::Scotland.new_years_day(2011)
   end
@@ -51,9 +50,9 @@ class ScottishHolidaysTest < Minitest::Test
     assert_equal Date.new(2014, 11, 30), Timetress::Scotland.st_andrews_day(2014)
   end
 
-  #def test_st_andrews_on_a_saturday
+  # def test_st_andrews_on_a_saturday
   #  assert_equal Date.new(2013, 12, 2), Timetress::Scotland.st_andrews_day(2013)
-  #end
+  # end
 
   def test_royal_proclamation_for_weekday
     assert_equal Date.new(2014, 8, 20), Timetress::Scotland.royal_proclamation(Date.new(2014, 8, 20))

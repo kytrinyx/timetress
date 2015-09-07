@@ -1,7 +1,7 @@
 # Timetress
 
 Knows about workdays and holidays, public and otherwise.
-Answers the age-old question _When is mothersday this year?_.
+Answers the age-old question _When is Mother's Day this year?_.
 
 [![Build Status](https://secure.travis-ci.org/kytrinyx/timetress.png?branch=master)](http://travis-ci.org/kytrinyx/timetress)
 
@@ -117,7 +117,7 @@ Public holidays are emphasized below.
 
 In Scotland, bank holidays always extend the weekend. This is done via a royal proclamation.
 
->Royal proclamation is used to move bank holidays that would otherwise fall on a weekend. In this way, public holidays are not 'lost' in years when they coincide with weekends. 
+>Royal proclamation is used to move bank holidays that would otherwise fall on a weekend. In this way, public holidays are not 'lost' in years when they coincide with weekends.
 > - [Wikipedia](http://en.wikipedia.org/wiki/Bank_holiday#Royal_proclamation)
 
 Essentially, if a holiday lands on a weekend, there is a royal proclamation "moving" the day everybody gets off work to the next weekday. I.e. if New Year's Days is on a Sunday, everybody gets Monday off.
