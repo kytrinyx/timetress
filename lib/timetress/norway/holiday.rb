@@ -21,8 +21,7 @@ module Timetress
       end
 
       def christmas(_year)
-        raise AmbiguousHolidayError.new(
-          "Do you mean `christmas_eve` or `first_day_of_christmas`?")
+        raise AmbiguousHolidayError.new("Do you mean `christmas_eve` or `first_day_of_christmas`?")
       end
 
       def first_day_of_christmas(year)

@@ -92,8 +92,7 @@ module Timetress
       given_date ||= Date.today
 
       unless given_date.respond_to?(:asctime)
-        raise ArgumentError.new(
-          "#{given_date.inspect} must be a date or time object")
+        raise ArgumentError.new("#{given_date.inspect} must be a date or time object")
       end
 
       the_day = self.send(holiday.to_sym, given_date.year)
