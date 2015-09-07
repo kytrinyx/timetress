@@ -3,13 +3,13 @@ require 'timetress'
 
 # http://en.wikipedia.org/wiki/Public_holidays_in_the_United_States
 class USHolidaysTest < Minitest::Test
-
   def test_inherits_common_holidays
     assert_equal Date.new(2011, 1, 1), Timetress::USA.new_years_day(2011)
   end
 
   def test_martin_luther_king_day_is_the_third_monday_of_january
-    assert_equal Date.new(2011, 1, 17), Timetress::USA.martin_luther_king_day(2011)
+    assert_equal Date.new(2011, 1, 17),
+                 Timetress::USA.martin_luther_king_day(2011)
   end
 
   def test_memorial_day_is_the_last_monday_in_may
@@ -40,6 +40,4 @@ class USHolidaysTest < Minitest::Test
   def test_labor_day
     assert_equal Date.new(2011, 9, 5), Timetress::USA.labor_day(2011)
   end
-
 end
-

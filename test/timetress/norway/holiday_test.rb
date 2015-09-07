@@ -2,7 +2,6 @@ require './test/test_helper'
 require 'timetress'
 
 class NorwegianHolidaysTest < Minitest::Test
-
   def test_inherits_common_holidays
     assert_equal Date.new(2011, 1, 1), Timetress::Norway.new_years_day(2011)
   end
@@ -46,11 +45,13 @@ class NorwegianHolidaysTest < Minitest::Test
   end
 
   def test_official_holidays_are_public_holidays
-    assert_equal Timetress::Norway.official_holidays(2013), Timetress::Norway.public_holidays(2013)
+    assert_equal Timetress::Norway.official_holidays(2013),
+                 Timetress::Norway.public_holidays(2013)
   end
 
   def test_official_holidays_are_legal_holidays
-    assert_equal Timetress::Norway.official_holidays(2013), Timetress::Norway.legal_holidays(2013)
+    assert_equal Timetress::Norway.official_holidays(2013),
+                 Timetress::Norway.legal_holidays(2013)
   end
 
   # in 2013 ascension is before the national holiday
@@ -79,7 +80,8 @@ class NorwegianHolidaysTest < Minitest::Test
 
   def test_previous_holiday_works
     mothersday = Date.new(2011, 2, 13)
-    assert_equal mothersday, Timetress::Norway.previous_mothersday(mothersday + 1)
+    assert_equal mothersday,
+                 Timetress::Norway.previous_mothersday(mothersday + 1)
   end
 
   def test_christmas_is_ambiguous

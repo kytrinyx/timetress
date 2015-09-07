@@ -1,6 +1,5 @@
 module Timetress
   module Holiday
-
     JANUARY = 1
     FEBRUARY = 2
     MAY = 5
@@ -62,38 +61,39 @@ module Timetress
       Date.new(year, DECEMBER, 31)
     end
 
-    def official_holidays(year)
+    def official_holidays(_year)
       raise BeMoreSpecific.new localization_error_message
     end
 
-    def mothersday(year)
+    def mothersday(_year)
       raise BeMoreSpecific.new localization_error_message
     end
 
-    def fathersday(year)
+    def fathersday(_year)
       raise BeMoreSpecific.new localization_error_message
     end
 
-    def labour_day(year)
+    def labour_day(_year)
       raise BeMoreSpecific.new localization_error_message
     end
     alias_method :labor_day, :labour_day
 
-    def national_holiday(year)
+    def national_holiday(_year)
       raise BeMoreSpecific.new localization_error_message
     end
 
     private
 
     def localization_error_message
-      "Different in different countries. Try a country-specific module."
+      'Different in different countries. Try a country-specific module.'
     end
 
     def next_holiday(holiday, given_date)
       given_date ||= Date.today
 
       unless given_date.respond_to?(:asctime)
-        raise ArgumentError.new("#{given_date.inspect} must be a date or time object")
+        raise ArgumentError.new(
+          "#{given_date.inspect} must be a date or time object")
       end
 
       the_day = self.send(holiday.to_sym, given_date.year)
