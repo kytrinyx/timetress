@@ -20,7 +20,7 @@ module Timetress
         Date.new(year, MAY, 17)
       end
 
-      def christmas(year)
+      def christmas(_year)
         raise AmbiguousHolidayError.new("Do you mean `christmas_eve` or `first_day_of_christmas`?")
       end
 
@@ -48,7 +48,6 @@ module Timetress
       end
       alias_method :public_holidays, :official_holidays
       alias_method :legal_holidays, :official_holidays
-
     end
   end
 end

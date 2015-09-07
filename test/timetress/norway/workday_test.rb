@@ -6,4 +6,3 @@ class NorwayWorkdayTest < Minitest::Test
     assert Timetress::Norway.respond_to?(:workday?)
   end
 end
-

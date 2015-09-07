@@ -12,10 +12,9 @@ module Somewhere
 end
 
 class WorkdayTest < Minitest::Test
-
   def test_weekends_are_not_workdays
-     assert !Somewhere.workday?(Date.new(2012, 9, 29))
-     assert !Somewhere.workday?(Date.new(2012, 9, 30))
+    assert !Somewhere.workday?(Date.new(2012, 9, 29))
+    assert !Somewhere.workday?(Date.new(2012, 9, 30))
   end
 
   def test_holidays_are_not_workdays
@@ -88,5 +87,4 @@ class NthWorkdayTest < Minitest::Test
   def test_nth_workday_after_works_on_the_weekend
     assert_equal monday, Somewhere.nth_workday_after(1, saturday)
   end
-
 end

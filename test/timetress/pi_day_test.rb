@@ -10,7 +10,6 @@ module Timetress
 end
 
 class PiDayTest < Minitest::Test
-
   def last_pi_day
     Date.new(2010, 3, 14)
   end
@@ -41,7 +40,7 @@ class PiDayTest < Minitest::Test
 
   def test_next_holiday_rejects_string_input
     assert_raises ArgumentError do
-      Timetress.next_pi_day("a string")
+      Timetress.next_pi_day('a string')
     end
   end
 
@@ -69,7 +68,7 @@ class PiDayTest < Minitest::Test
 
   def test_previous_holiday_rejects_string_input
     assert_raises ArgumentError do
-      Timetress.previous_pi_day("a string")
+      Timetress.previous_pi_day('a string')
     end
   end
 
@@ -78,5 +77,4 @@ class PiDayTest < Minitest::Test
       Timetress.previous_pi_day(1)
     end
   end
-
 end

@@ -1,8 +1,8 @@
 require 'date'
-require "timetress/version"
-require "timetress/easter"
-require "timetress/holiday"
-require "timetress/workday"
+require 'timetress/version'
+require 'timetress/easter'
+require 'timetress/holiday'
+require 'timetress/workday'
 
 require 'timetress/norway'
 require 'timetress/usa'
@@ -13,5 +13,4 @@ module Timetress
   class AmbiguousHolidayError < StandardError; end
 
   extend Timetress::Holiday
-
 end

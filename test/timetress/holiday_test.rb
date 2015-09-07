@@ -2,7 +2,6 @@ require './test/test_helper'
 require 'timetress'
 
 class HolidayTest < Minitest::Test
-
   def test_new_years_day
     assert_equal Date.new(2011, 1, 1), Timetress.new_years_day(2011)
   end
