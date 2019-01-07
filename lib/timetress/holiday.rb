@@ -53,6 +53,14 @@ module Timetress
       Date.new(year, DECEMBER, 25)
     end
 
+    def orthodox_christmas_eve(year)
+      Date.new(year, JANUARY, 6)
+    end
+
+    def orthodox_christmas(year)
+      Date.new(year, JANUARY, 7)
+    end
+
     def boxing_day(year)
       Date.new(year, DECEMBER, 26)
     end
